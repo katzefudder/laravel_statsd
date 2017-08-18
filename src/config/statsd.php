@@ -1,6 +1,6 @@
 <?php
 
 return [
-	'host' => 'graphite.katzefudder.de',
+	'host' => 'subdomain.host.tld',
 	'port' => '8125'
 ];
