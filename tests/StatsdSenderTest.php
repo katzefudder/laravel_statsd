@@ -11,8 +11,8 @@ class StatsdSenderTest extends TestCase {
 		$this->config = Mockery::mock('Illuminate\Contracts\Config\Repository');
 		$this->config->shouldReceive('get')->andReturn(false);
 
-		$this->statsdSender = Mockery::mock('Katzefudder\Statsd\StatsdSender[sendData]', [$this->config]);
-		$this->statsdSender->shouldReceive('sendData')->once()->andReturn(true);
+		$this->statsdSender = Mockery::mock('Katzefudder\Statsd\StatsdSender[sendToStatsd]', [$this->config]);
+		$this->statsdSender->shouldReceive('sendToStatsd')->once()->andReturn(true);
 	}
 
 
@@ -22,7 +22,7 @@ class StatsdSenderTest extends TestCase {
 	public function dataShouldBeSent() {
 		$key = 'teststring';
 		$value = '1';
-		$result = $this->statsdSender->sendToStatsd($key, $value);
+		$result = $this->statsdSender->send($key, $value);
 		$this->assertTrue($result);
 	}
 }

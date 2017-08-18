@@ -18,13 +18,13 @@ class StatsdSender {
 	 * @param string $data
 	 * @return bool
 	 */
-	public function sendToStatsd($key, $value) {
+	public function send($key, $value) {
 		$endpoint = $this->config->get('statsd.host');
 		$port = $this->config->get('statsd.port');
 
 		// must be an equivalent of `echo "my.test2:2|c" | nc -u -w 1 host.domain 8125`
 		$data = $key.'|'.$value;
-		return $this->sendData($endpoint, $port, $data);
+		return $this->sendToStatsd($endpoint, $port, $data);
 	}
 
 
@@ -34,7 +34,7 @@ class StatsdSender {
 	 * @param string $data
 	 * @return bool
 	 */
-	public function sendData($endpoint, $port, $data) {
+	public function sendToStatsd($endpoint, $port, $data) {
 		$connection = fsockopen('udp://'.$endpoint, $port);
 		fwrite($connection, $data);
 		return fclose($connection);
