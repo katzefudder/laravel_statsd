@@ -15,7 +15,7 @@ class StatsdSenderTest extends PHPUnit_Framework_TestCase {
 		$this->config = Mockery::mock('Illuminate\Contracts\Config\Repository');
 		$this->config->shouldReceive('get')->andReturn(false);
 
-		$this->statsdSender = Mockery::mock('Katzefudder\statsd\statsdSender[sendData]', [$this->config]);
+		$this->statsdSender = Mockery::mock('Katzefudder\Statsd\statsdSender[sendData]', [$this->config]);
 		$this->statsdSender->shouldReceive('sendData')->once()->andReturn(true);
 	}
 
@@ -25,7 +25,7 @@ class StatsdSenderTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function dataShouldBeSent() {
 		$data = 'teststring';
-		$result = $this->statsdSender->sendTostatsd($data);
+		$result = $this->statsdSender->sendToStatsd($data);
 		$this->assertTrue($result);
 	}
 }
