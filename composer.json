@@ -1,0 +1,34 @@
+{
+	"name": "katzefudder/laravel_statsd",
+	"description": "Send data to statsd",
+	"version": "1.0.1",
+	"homepage": "https://github.com/katzefidder/laravel_statsd",
+	"keywords":
+	[
+		"graphite"
+	],
+	"authors": [
+		{
+			"name": "Florian Dehn",
+			"email": "flo@katzefudder.de"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0",
+		"illuminate/support": "5.*"
+
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.0",
+		"mockery/mockery": "0.9.*"
+	},
+	"autoload": {
+		"classmap": [
+			"src/"
+		],
+		"psr-0": {
+			"Katzefudder\\Statsd\\": "src/"
+		}
+	},
+	"license": "MIT"
+}
