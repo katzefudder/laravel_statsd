@@ -13,7 +13,7 @@ class StatsdServiceProvider extends ServiceProvider {
 	public function boot() {
 		// Publish a config file
 		$this->publishes([
-			__DIR__.'/../../config/statsd.php' => config_path('katzefudder_statsd.php'),
+			__DIR__.'/../../config/statsd.php' => config_path('statsd.php'),
 		], 'config');
 	}
 
