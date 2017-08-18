@@ -11,7 +11,7 @@ class StatsdSenderTest extends TestCase {
 		$this->config = Mockery::mock('Illuminate\Contracts\Config\Repository');
 		$this->config->shouldReceive('get')->andReturn(false);
 
-		$this->statsdSender = Mockery::mock('Katzefudder\Statsd\statsdSender[sendData]', [$this->config]);
+		$this->statsdSender = Mockery::mock('Katzefudder\Statsd\StatsdSender[sendData]', [$this->config]);
 		$this->statsdSender->shouldReceive('sendData')->once()->andReturn(true);
 	}
 
