@@ -1,12 +1,8 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: flo
- * Date: 20.12.15
- * Time: 14:19
- */
-class StatsdSenderTest extends PHPUnit_Framework_TestCase {
+use PHPUnit\Framework\TestCase;
+
+class StatsdSenderTest extends TestCase {
 
 	private $config = null;
 	private $statsdSender = null;
@@ -24,8 +20,9 @@ class StatsdSenderTest extends PHPUnit_Framework_TestCase {
 	 * @test
 	 */
 	public function dataShouldBeSent() {
-		$data = 'teststring';
-		$result = $this->statsdSender->sendToStatsd($data);
+		$key = 'teststring';
+		$value = '1';
+		$result = $this->statsdSender->sendToStatsd($key, $value);
 		$this->assertTrue($result);
 	}
 }
