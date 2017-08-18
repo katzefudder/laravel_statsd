@@ -25,3 +25,8 @@ Katzefudder\Statsd\StatsdServiceProvider::class
 ];
 
 ```
+
+## Usage
+Use the facade to send data from Laravel context
+
+`StatsdFacade::send('metric.name', '1');`
