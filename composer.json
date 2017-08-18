@@ -5,7 +5,9 @@
 	"homepage": "https://github.com/katzefidder/laravel_statsd",
 	"keywords":
 	[
-		"graphite"
+		"statsd",
+		"logging",
+		"metrics"
 	],
 	"authors": [
 		{
