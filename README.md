@@ -5,6 +5,13 @@
 
 This Laravel 5 package provides a very easy to use solution to send data to statsd
 
+## Install
+Simply with Composer
+
+`composer require katzefudder/laravel_statsd`
+
+
+
 ## Laravel config
 Add `StatsdServiceProvider` to providers' array
 Add `StatsdFacade` to alias' array
