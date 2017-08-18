@@ -18,10 +18,12 @@ class StatsdSender {
 	 * @param string $data
 	 * @return bool
 	 */
-	public function sendToStatsd($data) {
+	public function sendToStatsd($key, $value) {
 		$endpoint = $this->config->get('statsd.host');
 		$port = $this->config->get('statsd.port');
 
+		// must be an equivalent of `echo "my.test2:2|c" | nc -u -w 1 host.domain 8125`
+		$data = $key.'|'.$value;
 		return $this->sendData($endpoint, $port, $data);
 	}
 
