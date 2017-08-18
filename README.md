@@ -5,9 +5,23 @@
 
 This Laravel 5 package provides a very easy to use solution to send data to statsd
 
+## Laravel config
+Add `StatsdServiceProvider` to providers' array
+Add `StatsdFacade` to alias' array
+
+```
+# config.php
+
+'providers' => [
+...
 Katzefudder\Statsd\StatsdServiceProvider::class
+...
+];
+
+'aliases' => [
+...
 'Statsd' => Katzefudder\Statsd\StatsdFacade::class
+...
+];
 
-## License
-
-The MIT License (MIT).
+```
