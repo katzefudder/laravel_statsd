@@ -1,7 +1,6 @@
 {
 	"name": "katzefudder/laravel_statsd",
 	"description": "Send data to statsd",
-	"version": "1.0.0",
 	"homepage": "https://github.com/katzefidder/laravel_statsd",
 	"keywords":
 	[
